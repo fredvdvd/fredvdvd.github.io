@@ -16,7 +16,16 @@
     <script>
       sparkLogin(function(data) {
         console.log(data);
-      });
+        var devicesPr = spark.listDevices();
+        devicesPr.then(
+          function(devices){
+            console.log('Devices: ', devices);
+          },
+          function(err) {
+            console.log('List devices call failed: ', err);
+            }
+          );
+        });
     </script>
   </body>
 </html>
