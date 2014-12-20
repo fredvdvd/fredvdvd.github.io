@@ -16,15 +16,15 @@
     <script>
       sparkLogin(function(data) {
         console.log(data);
-        var devicesPr = spark.listDevices();
-        devicesPr.then(
-          function(devices){
-            console.log('Devices: ', devices);
-          },
-          function(err) {
-            console.log('List devices call failed: ', err);
-            }
-          );
+        spark.listDevices(function(err, devices) {
+          var device = devices[0];
+          console.log('Device name: ' + device.name);
+          console.log('- connected?: ' + device.connected);
+          console.log('- variables: ' + device.variables);
+          console.log('- functions: ' + device.functions);
+          console.log('- version: ' + device.version);
+           console.log('- requires upgrade?: ' + device.requiresUpgrade);
+          });
         });
     </script>
   </body>
