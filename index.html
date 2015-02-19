@@ -26,8 +26,19 @@
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-            <input type="text" class="span2" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="vertical" data-slider-selection="after"data-slider-tooltip="hide">
-          </div><!--/.nav-collapse -->
+        </div><!--/.nav-collapse -->
+        // Instantiate a slider
+        var mySlider = new Slider("input.slider", {
+        // initial options object });
+
+        // Call a method on the slider
+        var value = mySlider.getValue();
+
+        // For non-getter methods, you can chain together commands
+        mySlider
+                .setValue(5)
+                .setValue(7);
+            
         </div>
       </div>
     </div>
